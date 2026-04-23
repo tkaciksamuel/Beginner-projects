@@ -26,8 +26,6 @@ def start_new_game():
     new_game = input()
     if new_game == 'y':
         start_new_game()
-    else:
-        return
 
 def bot_move():
     while True:
