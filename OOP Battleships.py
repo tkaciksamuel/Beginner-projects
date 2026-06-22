@@ -207,17 +207,18 @@ class Game:
                 choice = input("Choose(1/2):")
 
                 if choice == '1':
-                    self.manual_place(player,ship_sizes)
+                    Game.manual_place(player,ship_sizes)
                     break
                 elif choice == '2':
-                    self.auto_place(player,ship_sizes)
+                    Game.auto_place(player,ship_sizes)
                     break
                 else:
                     print("Please enter a valid choice.")
 
 
 
-    def manual_place(self,player,ship_sizes):
+    @staticmethod
+    def manual_place(player,ship_sizes):
         print(f"{player.name} choose direction to build your ship(H/V)\n"
               f"H = horizontal\n"
               f"V = vertical")
@@ -257,7 +258,8 @@ class Game:
 
 
 
-    def auto_place(self,player,ship_sizes):
+    @staticmethod
+    def auto_place(player,ship_sizes):
         for size in ship_sizes:
             placed = False
 
